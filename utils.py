@@ -34,9 +34,3 @@ def get_address_by_cordinates(geolocator: Nominatim, coordinates: list[tuple]):
             location_results.append(None)  # Or handle the error as needed
 
     return location_results
-    # Print or use the location results
-    # for result in location_results:
-    #     if result:
-    #         print(result)
-    #     else:
-    #         print("No location found")

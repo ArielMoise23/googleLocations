@@ -30,7 +30,10 @@ for location in data['locations']:
 # Initialize Nominatim geocoder
 geolocator = Nominatim(user_agent="my_app")
 
-locations = get_address_by_cordinates(geolocator, coordinates)
+addresses = get_address_by_cordinates(geolocator, coordinates[:50]) ## for testing. next step without :50
+
+for i, address in enumerate(addresses):
+    locations[i].append(address)
 
 
 print(locations)
