@@ -25,10 +25,11 @@ def get_address_by_cordinates(geolocator: Nominatim, coordinates: list[tuple]):
     location_results = []
 
     # Iterate over coordinates and retrieve location information
+    
     for lat, lon in coordinates:
         try:
             location = geolocator.reverse(f"{lat}, {lon}")
-            location_results.append(location.address)
+            location_results.append(location.address) ## TODO in this iteration add to the outside list instead of looping twice. !
         except GeocoderTimedOut:
             print(f"Geocoding service timed out for coordinates: {lat}, {lon}")
             location_results.append(None)  # Or handle the error as needed
